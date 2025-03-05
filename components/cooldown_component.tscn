@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cs2n2kwti0h3a"]
+
+[ext_resource type="Script" path="res://components/cooldown_component.gd" id="1_37ndw"]
+
+[node name="CooldownComponent" type="Node"]
+script = ExtResource("1_37ndw")
+
+[node name="Cooldown" type="Timer" parent="."]

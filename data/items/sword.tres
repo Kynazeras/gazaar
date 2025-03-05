@@ -1,0 +1,12 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://dkp01qujcrhig"]
+
+[ext_resource type="Texture2D" uid="uid://cdk53mput46ju" path="res://assets/items/sword.png" id="1_w8t2p"]
+[ext_resource type="Script" path="res://data/items/sword.gd" id="2_dq6o7"]
+
+[resource]
+script = ExtResource("2_dq6o7")
+name = "Cool Sword"
+base_cooldown = 2.0
+size = 0
+tags = Array[int]([1])
+icon = ExtResource("1_w8t2p")

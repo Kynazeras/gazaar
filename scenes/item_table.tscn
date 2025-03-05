@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://dvdp3sy8c36k5"]
+
+[ext_resource type="PackedScene" uid="uid://cocifaog2uwan" path="res://scenes/item.tscn" id="1_g1mie"]
+
+[node name="ItemTable" type="HBoxContainer"]
+offset_right = 6.0
+theme_override_constants/separation = 1
+
+[node name="ItemUI" parent="." instance=ExtResource("1_g1mie")]
+layout_mode = 2
+
+[node name="ItemUI2" parent="." instance=ExtResource("1_g1mie")]
+layout_mode = 2
+
+[node name="ItemUI3" parent="." instance=ExtResource("1_g1mie")]
+layout_mode = 2
