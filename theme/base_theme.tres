@@ -1,0 +1,14 @@
+[gd_resource type="Theme" load_steps=5 format=3 uid="uid://dhovedkarnc5x"]
+
+[ext_resource type="Texture2D" uid="uid://jhqseubfg0jm" path="res://assets/ui/progress_bar_bg.png" id="1_6kq0m"]
+[ext_resource type="Texture2D" uid="uid://10dxhms3uicu" path="res://assets/ui/progress_bar_fill.png" id="1_323t2"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kctdy"]
+texture = ExtResource("1_6kq0m")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ek3qq"]
+texture = ExtResource("1_323t2")
+
+[resource]
+ProgressBar/styles/background = SubResource("StyleBoxTexture_kctdy")
+ProgressBar/styles/fill = SubResource("StyleBoxTexture_ek3qq")
