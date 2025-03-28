@@ -14,5 +14,5 @@ func trigger(targets: Array[Node]) -> void:
 	apply_effects(targets)
 		
 
-func apply_effects(targets):
+func apply_effects(_targets):
 	pass

@@ -2,11 +2,11 @@ extends Control
 class_name ItemUI
 
 @onready var cooldown_component: CooldownComponent = $CooldownComponent
-@onready var item_name: Label = %"Item Name"
+@onready var item_name: Label = %ItemName
 @onready var icon: TextureRect = %Icon
 @onready var cooldown_progress: ProgressBar = %CooldownProgress
-
 @onready var targets: Array[Node] = []
+
 @export var item: Item : set = _set_item
 
 var SMALL_SIZE = Vector2(50,100)
@@ -15,11 +15,11 @@ var LARGE_SIZE = Vector2(200,100)
 
 
 const SWORD = preload("res://data/items/sword.tres")
-const HAMMER = preload("res://data/items/hammer.tres")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	_set_item(SWORD)
+	item = SWORD
+
 
 func _set_item(value: Item):
 	item = value
@@ -43,6 +43,7 @@ func trigger_item():
 		return
 		
 	item.trigger(targets)
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):

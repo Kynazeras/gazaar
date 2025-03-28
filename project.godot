@@ -11,7 +11,8 @@ config_version=5
 [application]
 
 config/name="gazaar"
-config/features=PackedStringArray("4.2", "Forward Plus")
+run/main_scene="uid://briu4s0xrck0l"
+config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
@@ -22,6 +23,9 @@ Constants="*res://globals/constants.gd"
 
 window/size/viewport_width=640
 window/size/viewport_height=480
+window/size/window_width_override=1512
+window/size/window_height_override=982
+window/dpi/allow_hidpi=false
 
 [gui]
 

@@ -1,11 +1,10 @@
 [gd_scene load_steps=4 format=3 uid="uid://cocifaog2uwan"]
 
-[ext_resource type="Script" path="res://scripts/item_ui.gd" id="1_uxw8f"]
+[ext_resource type="Script" uid="uid://dw7bp8wf3hww" path="res://scripts/item_ui.gd" id="1_uxw8f"]
 [ext_resource type="PackedScene" uid="uid://cs2n2kwti0h3a" path="res://components/cooldown_component.tscn" id="2_e4hfn"]
-[ext_resource type="Texture2D" uid="uid://cdk53mput46ju" path="res://assets/items/sword.png" id="2_jocyr"]
+[ext_resource type="Texture2D" uid="uid://dj5wgqsgxe0wu" path="res://assets/items/sword.png" id="2_jocyr"]
 
 [node name="ItemUI" type="Control"]
-custom_minimum_size = Vector2(100, 100)
 layout_mode = 3
 anchors_preset = 0
 offset_right = 100.0
@@ -22,7 +21,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.909804, 0.756863, 0.439216, 1)
 
-[node name="Item Name" type="Label" parent="."]
+[node name="ItemName" type="Label" parent="."]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = -1
@@ -42,10 +41,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -16.0
-offset_top = -16.0
-offset_right = 16.0
-offset_bottom = 16.0
+offset_left = -26.5
+offset_top = -24.0
+offset_right = 21.5
+offset_bottom = 24.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
