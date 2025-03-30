@@ -2,15 +2,27 @@
 
 [ext_resource type="PackedScene" uid="uid://cocifaog2uwan" path="res://scenes/item.tscn" id="1_g1mie"]
 
-[node name="ItemTable" type="HBoxContainer"]
+[node name="ItemTable" type="MarginContainer"]
 offset_right = 6.0
-theme_override_constants/separation = 1
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
 
-[node name="ItemUI" parent="." instance=ExtResource("1_g1mie")]
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 2
 
-[node name="ItemUI2" parent="." instance=ExtResource("1_g1mie")]
+[node name="ItemUI" parent="HBoxContainer" instance=ExtResource("1_g1mie")]
 layout_mode = 2
 
-[node name="ItemUI3" parent="." instance=ExtResource("1_g1mie")]
+[node name="ItemUI2" parent="HBoxContainer" instance=ExtResource("1_g1mie")]
+layout_mode = 2
+
+[node name="ItemUI3" parent="HBoxContainer" instance=ExtResource("1_g1mie")]
+layout_mode = 2
+
+[node name="ItemUI4" parent="HBoxContainer" instance=ExtResource("1_g1mie")]
+layout_mode = 2
+
+[node name="ItemUI5" parent="HBoxContainer" instance=ExtResource("1_g1mie")]
 layout_mode = 2
