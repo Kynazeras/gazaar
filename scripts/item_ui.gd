@@ -48,3 +48,12 @@ func trigger_item():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	cooldown_progress.value = cooldown_component.get_time_left_percent()
+
+
+func _get_drag_data(_at_position: Vector2) -> Variant:
+	var item_data = SWORD.name
+	var sprite: TextureRect = TextureRect.new()
+	sprite.size = Vector2(100,100)
+	sprite.texture = item.icon
+	set_drag_preview(sprite)
+	return item_data
