@@ -1,20 +1,16 @@
-[gd_scene load_steps=2 format=3 uid="uid://bdlbcxl58y4yt"]
+[gd_scene load_steps=3 format=3 uid="uid://bdlbcxl58y4yt"]
 
+[ext_resource type="Script" uid="uid://b3g4klwne4du5" path="res://testing/test_draggable_item.gd" id="1_tusei"]
 [ext_resource type="Script" uid="uid://c4dmoi0rijtf2" path="res://components/drag_and_drop.gd" id="1_v4tw3"]
 
-[node name="TestDraggableItem" type="Control"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Draggable" type="PanelContainer" parent="."]
-layout_mode = 0
+[node name="TestDraggableItem" type="PanelContainer"]
+custom_minimum_size = Vector2(50, 50)
 offset_right = 50.0
 offset_bottom = 50.0
+pivot_offset = Vector2(25, 25)
+script = ExtResource("1_tusei")
 
 [node name="DragAndDropComponent" type="Node" parent="." node_paths=PackedStringArray("target")]
+unique_name_in_owner = true
 script = ExtResource("1_v4tw3")
-target = NodePath("../Draggable")
+target = NodePath("..")

@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://bysgt7gy7nihx"]
+[gd_scene load_steps=3 format=3 uid="uid://bysgt7gy7nihx"]
 
 [ext_resource type="PackedScene" uid="uid://bdlbcxl58y4yt" path="res://testing/test_draggable_item.tscn" id="1_y3okp"]
+[ext_resource type="Script" uid="uid://bt6gkm1rq0su1" path="res://components/drag_container.gd" id="2_ae6k1"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -15,21 +16,21 @@ layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="PanelContainer2" type="PanelContainer" parent="HBoxContainer"]
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-
-[node name="PanelContainer3" type="PanelContainer" parent="HBoxContainer"]
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-
-[node name="PanelContainer4" type="PanelContainer" parent="HBoxContainer"]
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-
-[node name="PanelContainer5" type="PanelContainer" parent="HBoxContainer"]
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-
 [node name="TestDraggableItem" parent="HBoxContainer" instance=ExtResource("1_y3okp")]
 layout_mode = 2
+
+[node name="TestDraggableItem2" parent="HBoxContainer" instance=ExtResource("1_y3okp")]
+layout_mode = 2
+
+[node name="TestDraggableItem3" parent="HBoxContainer" instance=ExtResource("1_y3okp")]
+layout_mode = 2
+
+[node name="TestDraggableItem4" parent="HBoxContainer" instance=ExtResource("1_y3okp")]
+layout_mode = 2
+
+[node name="TestDraggableItem5" parent="HBoxContainer" instance=ExtResource("1_y3okp")]
+layout_mode = 2
+
+[node name="DropContainerComponent" type="Node" parent="." node_paths=PackedStringArray("container")]
+script = ExtResource("2_ae6k1")
+container = NodePath("../HBoxContainer")

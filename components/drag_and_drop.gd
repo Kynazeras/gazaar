@@ -1,7 +1,8 @@
+class_name DragAndDrop
 extends Node
 
-signal drag_started
-signal dropped
+signal drag_started()
+signal dropped(target: Control)
 signal drag_cancelled
 
 @export var target: Control
@@ -10,19 +11,19 @@ var dragging := false
 # var original_parent: Control = null
 
 func _ready() -> void:
-    print(target.get_rect().has_point(Vector2(700,700)))
+    # print(target.get_rect().has_point(Vector2(700,700)))
     target.gui_input.connect(_on_target_gui_input)
 
 
 func _process(_delta: float) -> void:
-    if dragging:
+    if dragging and target:
         target.global_position = target.get_global_mouse_position() - Vector2.ZERO
 
 
 func _input(event: InputEvent) -> void:
-    if event.is_action_released('select'):
+    if dragging and event.is_action_released('select'):
         _drop()
-    if event.is_action_pressed('cancel'):
+    if dragging and event.is_action_pressed('cancel'):
         _cancel_drag()
 
 
@@ -34,7 +35,8 @@ func _start_drag():
 
 
 func _drop():
-    dropped.emit()
+    dropped.emit(target)
+    print(target)
     dragging = false
 
 
