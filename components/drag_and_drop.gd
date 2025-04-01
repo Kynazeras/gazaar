@@ -1,11 +1,14 @@
 class_name DragAndDrop
 extends Node
 
+enum DRAG_FREEDOM {FREE, X_LOCKED, Y_LOCKED}
+
 signal drag_started()
 signal dropped(target: Control)
 signal drag_cancelled
 
 @export var target: Control
+@export var freedom: DRAG_FREEDOM = DRAG_FREEDOM.FREE
 
 var dragging := false
 # var original_parent: Control = null
@@ -17,7 +20,16 @@ func _ready() -> void:
 
 func _process(_delta: float) -> void:
     if dragging and target:
-        target.global_position = target.get_global_mouse_position() - Vector2.ZERO
+        match freedom:
+            DRAG_FREEDOM.FREE:
+                target.global_position = target.get_global_mouse_position() - Vector2.ZERO
+            DRAG_FREEDOM.X_LOCKED:
+                target.global_position.x = target.get_global_mouse_position().x - Vector2.ZERO.x
+            DRAG_FREEDOM.Y_LOCKED:
+                target.global_position.y = target.get_global_mouse_position().y - Vector2.ZERO.y
+            _:
+                target.global_position = target.get_global_mouse_position() - Vector2.ZERO
+        
 
 
 func _input(event: InputEvent) -> void:
@@ -31,12 +43,10 @@ func _start_drag():
     drag_started.emit()
     dragging = true
     target.z_index = 99
-    target.global_position = target.get_global_mouse_position() - Vector2.ZERO
 
 
 func _drop():
     dropped.emit(target)
-    print(target)
     dragging = false
 
 
