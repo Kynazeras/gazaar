@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemGroup" load_steps=5 format=3 uid="uid://dxtdap2a0addb"]
+
+[ext_resource type="Script" uid="uid://dy61vetbsf36m" path="res://scripts/resources/item.gd" id="1_kc58y"]
+[ext_resource type="Resource" uid="uid://bq4p2ate6hoie" path="res://data/items/hammer.tres" id="2_daekh"]
+[ext_resource type="Resource" uid="uid://dkp01qujcrhig" path="res://data/items/sword.tres" id="3_dhvys"]
+[ext_resource type="Script" uid="uid://787yfvmqwilf" path="res://scripts/resources/item_group.gd" id="4_q81xb"]
+
+[resource]
+script = ExtResource("4_q81xb")
+items = Array[ExtResource("1_kc58y")]([ExtResource("2_daekh"), ExtResource("3_dhvys"), ExtResource("2_daekh"), ExtResource("3_dhvys"), ExtResource("2_daekh")])
+metadata/_custom_type_script = "uid://787yfvmqwilf"
