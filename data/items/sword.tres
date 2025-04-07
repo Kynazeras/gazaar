@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource("2_dq6o7")
-name = "Cool Sword"
+name = "Sword"
 base_cooldown = 3.0
 size = 1
 tags = Array[int]([1])
