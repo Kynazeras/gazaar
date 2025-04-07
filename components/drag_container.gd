@@ -23,14 +23,21 @@ func _process(_delta: float) -> void:
 func change_order(index: int) -> void:
 	var child = container.get_child(index)
 	var threshold = child.size.x / 2
-	var prev_child = container.get_child(index - 1)
-	var next_child = container.get_child(index + 1)
-	if index > 0 and child.position.x < (prev_child.position.x + threshold):
+	var neighbors = get_surrounding_children(index)
+	if index > 0 and child.position.x < (neighbors[0].position.x + threshold):
 		swap_left(index)
-	elif index < (container.get_children().size() - 1) and child.position.x > (next_child.position.x - threshold):
+	elif index < (container.get_children().size() - 1) and child.position.x > (neighbors[1].position.x - threshold):
 		swap_right(index)
 	else:
 		return
+
+
+func get_surrounding_children(index: int) -> Array[Control]:
+	var prev_child = container.get_child(index - 1)
+	var next_child = null
+	if index < container.get_child_count() - 1:
+		next_child = container.get_child(index + 1)
+	return [prev_child, next_child]
 
 
 func swap_left(index: int):
@@ -48,10 +55,10 @@ func swap_right(index: int):
 
 
 func setup_drag_item(item: Control):
+	if item.drag_and_drop:
 		item.drag_and_drop.drag_started.connect(_on_child_drag_started)
 		item.drag_and_drop.drag_cancelled.connect(_on_child_drag_cancelled)
 		item.drag_and_drop.dropped.connect(_on_child_dropped)
-		print(item.drag_and_drop)
 		item.drag_and_drop.freedom = DragAndDrop.DRAG_FREEDOM.X_LOCKED
 
 

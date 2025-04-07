@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://dvdp3sy8c36k5"]
+[gd_scene load_steps=5 format=3 uid="uid://dvdp3sy8c36k5"]
 
 [ext_resource type="PackedScene" uid="uid://cocifaog2uwan" path="res://scenes/item.tscn" id="1_g1mie"]
+[ext_resource type="Script" uid="uid://bme2gywimmnq5" path="res://scripts/item_table.gd" id="1_vrf0r"]
+[ext_resource type="Resource" uid="uid://dxtdap2a0addb" path="res://data/item_groups/player_item_group.tres" id="2_ejbhx"]
+[ext_resource type="Script" uid="uid://bt6gkm1rq0su1" path="res://components/drag_container.gd" id="2_nlqqw"]
 
 [node name="ItemTable" type="MarginContainer"]
 offset_right = 6.0
@@ -8,21 +11,29 @@ theme_override_constants/margin_left = 4
 theme_override_constants/margin_top = 4
 theme_override_constants/margin_right = 4
 theme_override_constants/margin_bottom = 4
+script = ExtResource("1_vrf0r")
+item_group = ExtResource("2_ejbhx")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
+[node name="Table" type="HBoxContainer" parent="."]
+unique_name_in_owner = true
 layout_mode = 2
 
-[node name="ItemUI" parent="HBoxContainer" instance=ExtResource("1_g1mie")]
+[node name="ItemUI" parent="Table" instance=ExtResource("1_g1mie")]
 layout_mode = 2
 
-[node name="ItemUI2" parent="HBoxContainer" instance=ExtResource("1_g1mie")]
+[node name="ItemUI2" parent="Table" instance=ExtResource("1_g1mie")]
 layout_mode = 2
 
-[node name="ItemUI3" parent="HBoxContainer" instance=ExtResource("1_g1mie")]
+[node name="ItemUI3" parent="Table" instance=ExtResource("1_g1mie")]
 layout_mode = 2
 
-[node name="ItemUI4" parent="HBoxContainer" instance=ExtResource("1_g1mie")]
+[node name="ItemUI4" parent="Table" instance=ExtResource("1_g1mie")]
 layout_mode = 2
 
-[node name="ItemUI5" parent="HBoxContainer" instance=ExtResource("1_g1mie")]
+[node name="ItemUI5" parent="Table" instance=ExtResource("1_g1mie")]
 layout_mode = 2
+
+[node name="DragContainerComponent" type="Node" parent="." node_paths=PackedStringArray("container")]
+unique_name_in_owner = true
+script = ExtResource("2_nlqqw")
+container = NodePath("../Table")

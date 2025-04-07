@@ -1,4 +1,4 @@
-extends Control
+extends PanelContainer
 class_name ItemUI
 
 @onready var cooldown_component: CooldownComponent = $CooldownComponent
@@ -6,6 +6,7 @@ class_name ItemUI
 @onready var icon: TextureRect = %Icon
 @onready var cooldown_progress: ProgressBar = %CooldownProgress
 @onready var targets: Array[Node] = []
+@onready var drag_and_drop: DragAndDrop = %DragAndDropComponent
 
 @export var item: Item : set = _set_item
 
@@ -19,6 +20,7 @@ const SWORD = preload("res://data/items/sword.tres")
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	item = SWORD
+	cooldown_component.cooldown_ended.connect(trigger_item)
 
 
 func _set_item(value: Item):
@@ -26,16 +28,19 @@ func _set_item(value: Item):
 	icon.texture = value.icon
 	item_name.text = value.name
 	cooldown_component.initialize(value.base_cooldown)
-	cooldown_component.cooldown_ended.connect(trigger_item)
 	match value.size:
 		Constants.ItemSize.SMALL:
-			size = SMALL_SIZE
+			custom_minimum_size = SMALL_SIZE
+			pivot_offset = SMALL_SIZE / 2
 		Constants.ItemSize.MEDIUM:
-			size = MEDIUM_SIZE
+			custom_minimum_size = MEDIUM_SIZE
+			pivot_offset = MEDIUM_SIZE / 2
 		Constants.ItemSize.LARGE:
-			size = LARGE_SIZE
+			custom_minimum_size = LARGE_SIZE
+			pivot_offset = LARGE_SIZE / 2
 		_:
-			size = MEDIUM_SIZE
+			custom_minimum_size = MEDIUM_SIZE
+			pivot_offset = MEDIUM_SIZE / 2
 
 
 func trigger_item():
@@ -49,11 +54,3 @@ func trigger_item():
 func _process(_delta):
 	cooldown_progress.value = cooldown_component.get_time_left_percent()
 
-
-func _get_drag_data(_at_position: Vector2) -> Variant:
-	var item_data = SWORD.name
-	var sprite: TextureRect = TextureRect.new()
-	sprite.size = Vector2(100,100)
-	sprite.texture = item.icon
-	set_drag_preview(sprite)
-	return item_data
