@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Stats" load_steps=2 format=3 uid="uid://cog6y5bcid0og"]
+
+[ext_resource type="Script" uid="uid://bvojfvooa2gqk" path="res://scripts/resources/stats.gd" id="1_paefr"]
+
+[resource]
+script = ExtResource("1_paefr")
+max_health = 300
+current_health = 250
+shield_amount = 0
+metadata/_custom_type_script = "uid://bvojfvooa2gqk"

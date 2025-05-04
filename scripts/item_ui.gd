@@ -11,9 +11,9 @@ class_name ItemUI
 @export var item: Item : set = _set_item
 
 var SMALL_SIZE = Vector2(50,100)
-var MEDIUM_SIZE = Vector2(100,100)
-var LARGE_SIZE = Vector2(200,100)
-
+var MEDIUM_SIZE = Vector2(75,100)
+var LARGE_SIZE = Vector2(100,100)
+  
 
 const SWORD = preload("res://data/items/sword.tres")
 

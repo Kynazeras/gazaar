@@ -1,4 +1,5 @@
 extends MarginContainer
+class_name ItemTable
 
 @onready var drag_container: DragContainer = %DragContainerComponent
 @onready var table: HBoxContainer = %Table

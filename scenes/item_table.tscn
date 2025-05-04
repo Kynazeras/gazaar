@@ -7,33 +7,40 @@
 
 [node name="ItemTable" type="MarginContainer"]
 offset_right = 6.0
+script = ExtResource("1_vrf0r")
+item_group = ExtResource("2_ejbhx")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 2
+color = Color(0.188235, 0.172549, 0.180392, 1)
+
+[node name="TableContainer" type="MarginContainer" parent="."]
+layout_mode = 2
 theme_override_constants/margin_left = 4
 theme_override_constants/margin_top = 4
 theme_override_constants/margin_right = 4
 theme_override_constants/margin_bottom = 4
-script = ExtResource("1_vrf0r")
-item_group = ExtResource("2_ejbhx")
 
-[node name="Table" type="HBoxContainer" parent="."]
+[node name="Table" type="HBoxContainer" parent="TableContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 
-[node name="ItemUI" parent="Table" instance=ExtResource("1_g1mie")]
+[node name="ItemUI" parent="TableContainer/Table" instance=ExtResource("1_g1mie")]
 layout_mode = 2
 
-[node name="ItemUI2" parent="Table" instance=ExtResource("1_g1mie")]
+[node name="ItemUI2" parent="TableContainer/Table" instance=ExtResource("1_g1mie")]
 layout_mode = 2
 
-[node name="ItemUI3" parent="Table" instance=ExtResource("1_g1mie")]
+[node name="ItemUI3" parent="TableContainer/Table" instance=ExtResource("1_g1mie")]
 layout_mode = 2
 
-[node name="ItemUI4" parent="Table" instance=ExtResource("1_g1mie")]
+[node name="ItemUI4" parent="TableContainer/Table" instance=ExtResource("1_g1mie")]
 layout_mode = 2
 
-[node name="ItemUI5" parent="Table" instance=ExtResource("1_g1mie")]
+[node name="ItemUI5" parent="TableContainer/Table" instance=ExtResource("1_g1mie")]
 layout_mode = 2
 
 [node name="DragContainerComponent" type="Node" parent="." node_paths=PackedStringArray("container")]
 unique_name_in_owner = true
 script = ExtResource("2_nlqqw")
-container = NodePath("../Table")
+container = NodePath("../TableContainer/Table")

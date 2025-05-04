@@ -6,18 +6,18 @@
 [ext_resource type="Script" uid="uid://c4dmoi0rijtf2" path="res://components/drag_and_drop.gd" id="4_vljjh"]
 
 [node name="ItemUI" type="PanelContainer"]
-custom_minimum_size = Vector2(100, 100)
-offset_right = 67.0
+custom_minimum_size = Vector2(75, 100)
+offset_right = 75.0
 offset_bottom = 100.0
-pivot_offset = Vector2(50, 50)
+theme_type_variation = &"ItemPanel"
 script = ExtResource("1_uxw8f")
 
 [node name="ItemName" type="Label" parent="."]
 unique_name_in_owner = true
+visible = false
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
-theme_override_font_sizes/font_size = 10
 text = "Cool Hammer"
 
 [node name="Icon" type="TextureRect" parent="."]
@@ -34,6 +34,8 @@ unique_name_in_owner = true
 custom_minimum_size = Vector2(10, 10)
 layout_mode = 2
 size_flags_vertical = 8
+theme_type_variation = &"CooldownBar"
+value = 50.0
 show_percentage = false
 metadata/_edit_use_anchors_ = true
 

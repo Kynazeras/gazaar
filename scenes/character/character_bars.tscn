@@ -1,0 +1,37 @@
+[gd_scene load_steps=2 format=3 uid="uid://cusnjcgvri4oy"]
+
+[ext_resource type="Script" uid="uid://m018vlx44k46" path="res://scenes/character/character_bars.gd" id="1_rk31x"]
+
+[node name="CharacterBars" type="MarginContainer"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -290.0
+offset_top = -40.0
+offset_right = 290.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+script = ExtResource("1_rk31x")
+
+[node name="BarContainer" type="VBoxContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="ShieldBar" type="ProgressBar" parent="BarContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 8)
+layout_mode = 2
+theme_type_variation = &"ShieldBar"
+value = 72.0
+show_percentage = false
+
+[node name="HealthBar" type="ProgressBar" parent="BarContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 24)
+layout_mode = 2
+theme_type_variation = &"HealthBar"
+value = 22.0
+show_percentage = false

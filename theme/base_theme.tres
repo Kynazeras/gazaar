@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=6 format=3 uid="uid://dhovedkarnc5x"]
+[gd_resource type="Theme" load_steps=14 format=3 uid="uid://dhovedkarnc5x"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mfypk"]
 bg_color = Color(0.541176, 0.921569, 0.945098, 1)
@@ -9,15 +9,82 @@ bg_color = Color(0.156863, 0.8, 0.87451, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_61lpa"]
 bg_color = Color(0.223529, 0.470588, 0.658824, 1)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mqwa4"]
+bg_color = Color(0.278431, 0.176471, 0.235294, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3x820"]
+bg_color = Color(0.368627, 0.211765, 0.262745, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_adfe3"]
+bg_color = Color(0.156863, 0.8, 0.87451, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.368627, 0.211765, 0.262745, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j41tq"]
+bg_color = Color(0.278431, 0.176471, 0.235294, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.278431, 0.176471, 0.235294, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8bxxw"]
+bg_color = Color(0.443137, 0.666667, 0.203922, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.278431, 0.176471, 0.235294, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_icw8h"]
+bg_color = Color(0.509804, 0.439216, 0.580392, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.956863, 0.8, 0.631373, 1)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fqa2u"]
 bg_color = Color(0.811765, 0.776471, 0.721569, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_21fca"]
 bg_color = Color(0.156863, 0.8, 0.87451, 1)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1co2q"]
+bg_color = Color(0.278431, 0.176471, 0.235294, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.278431, 0.176471, 0.235294, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_osrpa"]
+bg_color = Color(0.956863, 0.705882, 0.105882, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.278431, 0.176471, 0.235294, 1)
+
 [resource]
 Button/styles/hover = SubResource("StyleBoxFlat_mfypk")
 Button/styles/normal = SubResource("StyleBoxFlat_5n10c")
 Button/styles/pressed = SubResource("StyleBoxFlat_61lpa")
+CharacterPortrait/base_type = &"PanelContainer"
+CharacterPortrait/styles/panel = SubResource("StyleBoxFlat_mqwa4")
+CooldownBar/base_type = &"ProgressBar"
+CooldownBar/styles/background = SubResource("StyleBoxFlat_3x820")
+CooldownBar/styles/fill = SubResource("StyleBoxFlat_adfe3")
+HealthBar/base_type = &"ProgressBar"
+HealthBar/styles/background = SubResource("StyleBoxFlat_j41tq")
+HealthBar/styles/fill = SubResource("StyleBoxFlat_8bxxw")
+ItemPanel/base_type = &"PanelContainer"
+ItemPanel/styles/panel = SubResource("StyleBoxFlat_icw8h")
 ProgressBar/styles/background = SubResource("StyleBoxFlat_fqa2u")
 ProgressBar/styles/fill = SubResource("StyleBoxFlat_21fca")
+ShieldBar/base_type = &"ProgressBar"
+ShieldBar/styles/background = SubResource("StyleBoxFlat_1co2q")
+ShieldBar/styles/fill = SubResource("StyleBoxFlat_osrpa")

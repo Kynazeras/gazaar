@@ -1,0 +1,52 @@
+[gd_scene load_steps=5 format=3 uid="uid://buijdjxd56d1e"]
+
+[ext_resource type="PackedScene" uid="uid://dvdp3sy8c36k5" path="res://scenes/item_table.tscn" id="1_c02bd"]
+[ext_resource type="PackedScene" uid="uid://bbqoqkmilfypb" path="res://scenes/character/character_pane.tscn" id="3_cnfnp"]
+[ext_resource type="PackedScene" uid="uid://c2pjukevocb8k" path="res://scenes/character/character_battle_area.tscn" id="3_mhs3n"]
+[ext_resource type="Resource" uid="uid://cog6y5bcid0og" path="res://data/character_stats/pirate_stats.tres" id="4_mhs3n"]
+
+[node name="BattleArea" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BG" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.278431, 0.176471, 0.235294, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="EnemyArea" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+
+[node name="CharacterPane" parent="MarginContainer/EnemyArea" instance=ExtResource("3_cnfnp")]
+layout_mode = 2
+size_flags_horizontal = 7
+inverted = true
+
+[node name="EnemyTable" parent="MarginContainer/EnemyArea" instance=ExtResource("1_c02bd")]
+layout_mode = 2
+size_flags_horizontal = 7
+size_flags_vertical = 0
+
+[node name="PlayerArea" parent="MarginContainer" instance=ExtResource("3_mhs3n")]
+layout_mode = 2
+stats = ExtResource("4_mhs3n")

@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://c2pjukevocb8k"]
+
+[ext_resource type="Script" uid="uid://dp8khxk6y5kcl" path="res://scenes/character/character_battle_area.gd" id="1_owjub"]
+[ext_resource type="PackedScene" uid="uid://dvdp3sy8c36k5" path="res://scenes/item_table.tscn" id="1_x2fle"]
+[ext_resource type="PackedScene" uid="uid://bbqoqkmilfypb" path="res://scenes/character/character_pane.tscn" id="2_owjub"]
+[ext_resource type="Resource" uid="uid://cog6y5bcid0og" path="res://data/character_stats/pirate_stats.tres" id="2_r1oe4"]
+
+[node name="CharacterBattleArea" type="VBoxContainer"]
+size_flags_horizontal = 4
+size_flags_vertical = 8
+script = ExtResource("1_owjub")
+stats = ExtResource("2_r1oe4")
+
+[node name="ItemTable" parent="." instance=ExtResource("1_x2fle")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 5
+
+[node name="CharacterPane" parent="." instance=ExtResource("2_owjub")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 5

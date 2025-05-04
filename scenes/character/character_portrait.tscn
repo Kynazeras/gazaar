@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://jcyebt3bueij"]
+
+[ext_resource type="Texture2D" uid="uid://bq2l267y1eii5" path="res://assets/characters/guy.png" id="1_vy32w"]
+
+[node name="CharacterPortrait" type="PanelContainer"]
+custom_minimum_size = Vector2(32, 32)
+offset_right = 32.0
+offset_bottom = 32.0
+theme_type_variation = &"CharacterPortrait"
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="CenterContainer"]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+texture = ExtResource("1_vy32w")
